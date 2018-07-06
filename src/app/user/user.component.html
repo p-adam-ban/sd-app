@@ -1,0 +1,39 @@
+
+
+<div *ngIf="user">
+
+  <h4>User data</h4>
+
+  <table style="width:70%">
+      <tr>
+        <td>id:</td>
+        <td>{{user.id}}</td>
+      </tr>
+      <tr>
+        <td>name:</td>
+        <td>{{user.name}}</td>
+      </tr>
+      <tr>
+        <td>age:</td>
+        <td>{{user.age}}</td>
+      </tr>
+      <tr>
+        <td>nationality:</td>
+        <td>{{user.nationality}}</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+        </tr>
+    </table>
+  <div>
+    
+   <h5>
+    <nav>      
+        <a routerLink="/user-settings/{{user.id}}">Edit</a>
+    </nav>
+  </h5>
+  </div>
+
+
+</div>

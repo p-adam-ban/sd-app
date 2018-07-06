@@ -1,0 +1,49 @@
+
+<!-- <h2>{{user.name | uppercase }} </h2>
+<div><span>id: </span>{{user.id}}</div>
+<div><span>name: </span>{{user.name}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="user.name" placeholder="name">
+  </label>
+</div> -->
+
+
+
+
+<app-user-search></app-user-search>
+
+<div class="group">
+    <div class="right">
+        <app-user [user]="selectedUser"></app-user>
+      </div>
+    <div class="left">
+        <div>
+            <h4>New user </h4>
+              <input #userName />
+            <!-- (click) passes input value to add() and then clears the input -->
+            <button (click)="add(userName.value); userName.value=''">
+              add
+            </button>
+          </div>
+      <div>
+          <h4>Users </h4>
+
+        <div class="data">
+          
+
+          <ul class="users">
+
+            <li 
+              *ngFor="let user of users" 
+              [class.selected]="user === selectedUser"
+              (click)="onSelectUser(user)"
+            >
+              <span class="badge">{{user.id}}</span> {{user.name}}
+              <button class="delete" (click)="delete(user)">x</button>
+            </li>
+          </ul>  
+        </div>
+      </div>
+    </div>
+</div>
